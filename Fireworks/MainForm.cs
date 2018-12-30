@@ -45,7 +45,8 @@ namespace Fireworks {
             foreach (Firework race in Races) {
 
                 if (race != null) {
-                    race.Paint(gr, vcb.Width / 2, vcb.Height - 20, 0.1f);
+                    race.Paint(gr, vcb.Width / 2, vcb.Height - 20,
+                               0.001f * (float)MainTimer.Interval);
                 }
 
             }

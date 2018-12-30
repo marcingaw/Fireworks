@@ -108,7 +108,7 @@ namespace Fireworks {
                 Tuple<float, float> currentVelocity = FragmentVelocities[0];
 
                 graphics.DrawLine(
-                    Pens.Gray,
+                    Pens.DimGray,
                     zeroX + currentPosition.Item1 - backTraceTime * currentVelocity.Item1,
                     zeroY - (currentPosition.Item2 - backTraceTime * currentVelocity.Item2),
                     zeroX + currentPosition.Item1,
