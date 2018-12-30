@@ -1,5 +1,5 @@
 ﻿namespace Fireworks {
-    partial class Form1 {
+    partial class MainForm {
         /// <summary>
         /// Wymagana zmienna projektanta.
         /// </summary>
@@ -24,12 +24,33 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
+            this.MainTimer = new System.Windows.Forms.Timer(this.components);
+            this.SuspendLayout();
+            // 
+            // MainTimer
+            // 
+            this.MainTimer.Interval = 50;
+            this.MainTimer.Tick += new System.EventHandler(this.MainTimer_Tick);
+            // 
+            // MainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.DoubleBuffered = true;
+            this.Name = "MainForm";
+            this.Text = "Fireworks";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.MainForm_Paint);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer MainTimer;
     }
 }
 
