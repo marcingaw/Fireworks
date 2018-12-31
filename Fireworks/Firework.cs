@@ -5,6 +5,50 @@ using System.Drawing;
 namespace Fireworks {
 
     class Firework {
+
+        // Configuration - randomness constraints - of a single firework.
+        public class Config {
+
+            // The initial location of the firework, in metres.
+            public float InitialX = 0.0f;
+            public float InitialY = 0.0f;
+
+            // The range times before the firework explodes, in seconds.
+            public float MinFuseTime = 3.0f;
+            public float MaxFuseTime = 5.0f;
+
+            // The range of the initial firework velocity, in m/s.
+            public float MinVx = -60.0f;
+            public float MaxVx = 60.0f;
+            public float MinVy = 60.0f;
+            public float MaxVy = 120.0f;
+
+            // The range of fragments velocities (in m/s) and brightnesses (in
+            // abstract relative units between 0 and 1).
+            public float MinFragmentV = 10.0f;
+            public float MaxFragmentV = 30.0f;
+            public float MinBrightness = 0.8f;
+            public float MaxBrightness = 1.0f;
+
+            // The range of the firework colors (between 0 and 1 each).
+            public float MinColorR = 0.3f;
+            public float MaxColorR = 1.0f;
+            public float MinColorG = 0.3f;
+            public float MaxColorG = 1.0f;
+            public float MinColorB = 0.3f;
+            public float MaxColorB = 1.0f;
+
+            // The minimum and maximum count of fragments after the explosion.
+            public int MinFragments = 20;
+            public int MaxFragments = 50;
+
+            // The minimum and maximum burn out rate of fragments, in abstract
+            // relative units between 0 and 1 per second).
+            public float MinBurnRate = 0.2f;
+            public float MaxBurnRate = 0.4f;
+
+        }
+
         // Gravitional acceleration, in m/s^2.
         private static readonly float GRAVITY = -9.81f;
 
@@ -23,10 +67,8 @@ namespace Fireworks {
 
         // Constraints on randomness of fragment velocities, in m/s.
         // All values inclusive.
-        private readonly float MinFragmentVx;
-        private readonly float MaxFragmentVx;
-        private readonly float MinFragmentVy;
-        private readonly float MaxFragmentVy;
+        private readonly float MinFragmentV;
+        private readonly float MaxFragmentV;
 
         // Constraints on brightness of fragments.
         // All values inclusive.
@@ -60,37 +102,26 @@ namespace Fireworks {
         // Brightness of fragments, in relative units [0...1].
         private readonly List<float> FragmentBrightnesses = new List<float>();
 
-        // Constructs a firework in its initial time, fired at a given
-        // location, with given constraints on randomness of events in the
-        // firework's life time.
-        public Firework(float initialX, float initialY,
-                        float minFuseTime, float maxFuseTime,
-                        float minVx, float maxVx,
-                        float minVy, float maxVy,
-                        float minFragmentVx, float maxFragmentVx,
-                        float minFragmentVy, float maxFragmentVy,
-                        float minBrightness, float maxBrightness,
-                        int minFragments, int maxFragments,
-                        float minBurnRate, float maxBurnRate) {
-            MinFragmentVx = minFragmentVx;
-            MaxFragmentVx = maxFragmentVx;
-            MinFragmentVy = minFragmentVy;
-            MaxFragmentVy = maxFragmentVy;
-            MinBrightness = minBrightness;
-            MaxBrightness = maxBrightness;
-            MinFragments = minFragments;
-            MaxFragments = maxFragments;
-            BurnRate = GetRandomInRange(minBurnRate, maxBurnRate);
+        // Constructs a firework in its initial time, according to the given
+        // randomness configuration.
+        public Firework(Config config) {
+            MinFragmentV = config.MinFragmentV;
+            MaxFragmentV = config.MaxFragmentV;
+            MinBrightness = config.MinBrightness;
+            MaxBrightness = config.MaxBrightness;
+            MinFragments = config.MinFragments;
+            MaxFragments = config.MaxFragments;
+            BurnRate = GetRandomInRange(config.MinBurnRate, config.MaxBurnRate);
 
-            ColorR = GetRandomInRange(0.25f, 1.0f);
-            ColorG = GetRandomInRange(0.25f, 1.0f);
-            ColorB = GetRandomInRange(0.25f, 1.0f);
+            ColorR = GetRandomInRange(config.MinColorR, config.MaxColorR);
+            ColorG = GetRandomInRange(config.MinColorG, config.MaxColorG);
+            ColorB = GetRandomInRange(config.MinColorB, config.MaxColorB);
 
-            FragmentPositions.Add(new Tuple<float, float>(initialX, initialY));
+            FragmentPositions.Add(new Tuple<float, float>(config.InitialX, config.InitialY));
             FragmentVelocities.Add(new Tuple<float, float>(
-                GetRandomInRange(minVx, maxVx),
-                GetRandomInRange(minVy, maxVy)));
-            FuseTime = GetRandomInRange(minFuseTime, maxFuseTime);
+                GetRandomInRange(config.MinVx, config.MaxVx),
+                GetRandomInRange(config.MinVy, config.MaxVy)));
+            FuseTime = GetRandomInRange(config.MinFuseTime, config.MaxFuseTime);
         }
 
         // Paints the firework in its current state in the given graphics
@@ -133,7 +164,9 @@ namespace Fireworks {
                     graphics.DrawLine(
                         new Pen(Color.FromArgb((int)(ColorR * currentBrightness),
                                                (int)(ColorG * currentBrightness),
-                                               (int)(ColorB * currentBrightness))),
+                                               (int)(ColorB * currentBrightness))) {
+                            Width = 2.0f
+                        },
                         zeroX + currentPosition.Item1 - backTraceTime * currentVelocity.Item1,
                         zeroY - (currentPosition.Item2 - backTraceTime * currentVelocity.Item2),
                         zeroX + currentPosition.Item1,
@@ -177,9 +210,11 @@ namespace Fireworks {
 
                 for (int k = 0; k < fragmentCount; k++) {
                     FragmentPositions.Add(boomPos);
+                    float v = GetRandomInRange(MinFragmentV, MaxFragmentV);
+                    float h = GetRandomInRange(0.0f, 2.0f * (float)Math.PI);
                     FragmentVelocities.Add(new Tuple<float, float>(
-                        boomVel.Item1 + GetRandomInRange(MinFragmentVx, MaxFragmentVx),
-                        boomVel.Item2 + GetRandomInRange(MinFragmentVy, MaxFragmentVy)));
+                        boomVel.Item1 + v * (float)Math.Cos(h),
+                        boomVel.Item2 + v * (float)Math.Sin(h)));
                     FragmentBrightnesses.Add(GetRandomInRange(MinBrightness, MaxBrightness));
                 }
 
