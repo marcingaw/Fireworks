@@ -13,207 +13,215 @@ namespace Fireworks {
     public partial class MainForm : Form {
 
         private Firework[] Races = new Firework[40] {
+            ////////////////////
+            // The golden stars
             new Firework(new Firework.Config() {
-                MinFuseTime = 2.0f, MaxFuseTime = 2.0f, MinBrightness = 1.0f, MaxBrightness = 1.0f,
+                MinFuseTime = 1.9f, MaxFuseTime = 2.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MinColorR = 1.0f, MinColorG = 1.0f, MaxColorB = 0.5f,
-                MinFragmentV = 20.0f, MaxFragmentV = 25.0f,
-                MinVx = 0.0f, MaxVx = 0.0f, MinVy = 110.0f, MaxVy = 110.0f
+                MinFragmentV = 25.0f, MaxFragmentV = 30.0f,
+                MinVx = -1.0f, MaxVx = 1.0f, MinVy = 109.0f, MaxVy = 111.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 2.0f, MaxFuseTime = 2.0f, MinBrightness = 1.0f, MaxBrightness = 1.0f,
+                MinFuseTime = 1.9f, MaxFuseTime = 2.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MinColorR = 1.0f, MinColorG = 1.0f, MaxColorB = 0.5f,
-                MinFragmentV = 20.0f, MaxFragmentV = 25.0f,
-                MinVx = 0.0f, MaxVx = 0.0f, MinVy = 110.0f, MaxVy = 110.0f
+                MinFragmentV = 25.0f, MaxFragmentV = 30.0f,
+                MinVx = -1.0f, MaxVx = 1.0f, MinVy = 109.0f, MaxVy = 111.0f
             }),
+            ///////////////////////
+            // The blue background
             new Firework(new Firework.Config() {
-                MinFuseTime = 2.0f, MaxFuseTime = 2.0f, MinBrightness = 0.5f, MaxBrightness = 0.5f,
+                MinFuseTime = 1.9f, MaxFuseTime = 2.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MaxColorR = 0.5f, MaxColorG = 0.5f, MinColorB = 1.0f,
-                MinVx = -5.0f, MaxVx = -5.0f, MinVy = 120.0f, MaxVy = 120.0f
+                MinVx = -6.0f, MaxVx = -4.0f, MinVy = 119.0f, MaxVy = 121.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 2.0f, MaxFuseTime = 2.0f, MinBrightness = 0.5f, MaxBrightness = 0.5f,
+                MinFuseTime = 1.9f, MaxFuseTime = 2.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MaxColorR = 0.5f, MaxColorG = 0.5f, MinColorB = 1.0f,
-                MinVx = -15.0f, MaxVx = -15.0f, MinVy = 120.0f, MaxVy = 120.0f
+                MinVx = -16.0f, MaxVx = -14.0f, MinVy = 119.0f, MaxVy = 121.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 2.0f, MaxFuseTime = 2.0f, MinBrightness = 0.5f, MaxBrightness = 0.5f,
+                MinFuseTime = 1.9f, MaxFuseTime = 2.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MaxColorR = 0.5f, MaxColorG = 0.5f, MinColorB = 1.0f,
-                MinVx = -25.0f, MaxVx = -25.0f, MinVy = 120.0f, MaxVy = 120.0f
+                MinVx = -26.0f, MaxVx = -24.0f, MinVy = 119.0f, MaxVy = 121.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 2.0f, MaxFuseTime = 2.0f, MinBrightness = 0.5f, MaxBrightness = 0.5f,
+                MinFuseTime = 1.9f, MaxFuseTime = 2.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MaxColorR = 0.5f, MaxColorG = 0.5f, MinColorB = 1.0f,
-                MinVx = 5.0f, MaxVx = 5.0f, MinVy = 120.0f, MaxVy = 120.0f
+                MinVx = 4.0f, MaxVx = 6.0f, MinVy = 119.0f, MaxVy = 121.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 2.0f, MaxFuseTime = 2.0f, MinBrightness = 0.5f, MaxBrightness = 0.5f,
+                MinFuseTime = 1.9f, MaxFuseTime = 2.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MaxColorR = 0.5f, MaxColorG = 0.5f, MinColorB = 1.0f,
-                MinVx = 15.0f, MaxVx = 15.0f, MinVy = 120.0f, MaxVy = 120.0f
+                MinVx = 14.0f, MaxVx = 16.0f, MinVy = 119.0f, MaxVy = 121.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 2.0f, MaxFuseTime = 2.0f, MinBrightness = 0.5f, MaxBrightness = 0.5f,
+                MinFuseTime = 1.9f, MaxFuseTime = 2.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MaxColorR = 0.5f, MaxColorG = 0.5f, MinColorB = 1.0f,
-                MinVx = 25.0f, MaxVx = 25.0f, MinVy = 120.0f, MaxVy = 120.0f
+                MinVx = 24.0f, MaxVx = 26.0f, MinVy = 119.0f, MaxVy = 121.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 2.0f, MaxFuseTime = 2.0f, MinBrightness = 0.5f, MaxBrightness = 0.5f,
+                MinFuseTime = 1.9f, MaxFuseTime = 2.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MaxColorR = 0.5f, MaxColorG = 0.5f, MinColorB = 1.0f,
-                MinVx = -5.0f, MaxVx = -5.0f, MinVy = 110.0f, MaxVy = 110.0f
+                MinVx = -6.0f, MaxVx = -4.0f, MinVy = 109.0f, MaxVy = 111.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 2.0f, MaxFuseTime = 2.0f, MinBrightness = 0.5f, MaxBrightness = 0.5f,
+                MinFuseTime = 1.9f, MaxFuseTime = 2.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MaxColorR = 0.5f, MaxColorG = 0.5f, MinColorB = 1.0f,
-                MinVx = -15.0f, MaxVx = -15.0f, MinVy = 110.0f, MaxVy = 110.0f
+                MinVx = -16.0f, MaxVx = -14.0f, MinVy = 109.0f, MaxVy = 111.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 2.0f, MaxFuseTime = 2.0f, MinBrightness = 0.5f, MaxBrightness = 0.5f,
+                MinFuseTime = 1.9f, MaxFuseTime = 2.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MaxColorR = 0.5f, MaxColorG = 0.5f, MinColorB = 1.0f,
-                MinVx = -25.0f, MaxVx = -25.0f, MinVy = 110.0f, MaxVy = 110.0f
+                MinVx = -26.0f, MaxVx = -24.0f, MinVy = 109.0f, MaxVy = 111.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 2.0f, MaxFuseTime = 2.0f, MinBrightness = 0.5f, MaxBrightness = 0.5f,
+                MinFuseTime = 1.9f, MaxFuseTime = 2.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MaxColorR = 0.5f, MaxColorG = 0.5f, MinColorB = 1.0f,
-                MinVx = 5.0f, MaxVx = 5.0f, MinVy = 110.0f, MaxVy = 110.0f
+                MinVx = 4.0f, MaxVx = 6.0f, MinVy = 109.0f, MaxVy = 111.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 2.0f, MaxFuseTime = 2.0f, MinBrightness = 0.5f, MaxBrightness = 0.5f,
+                MinFuseTime = 1.9f, MaxFuseTime = 2.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MaxColorR = 0.5f, MaxColorG = 0.5f, MinColorB = 1.0f,
-                MinVx = 15.0f, MaxVx = 15.0f, MinVy = 110.0f, MaxVy = 110.0f
+                MinVx = 14.0f, MaxVx = 16.0f, MinVy = 109.0f, MaxVy = 111.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 2.0f, MaxFuseTime = 2.0f, MinBrightness = 0.5f, MaxBrightness = 0.5f,
+                MinFuseTime = 1.9f, MaxFuseTime = 2.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MaxColorR = 0.5f, MaxColorG = 0.5f, MinColorB = 1.0f,
-                MinVx = 25.0f, MaxVx = 25.0f, MinVy = 110.0f, MaxVy = 110.0f
+                MinVx = 24.0f, MaxVx = 26.0f, MinVy = 109.0f, MaxVy = 111.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 2.0f, MaxFuseTime = 2.0f, MinBrightness = 0.5f, MaxBrightness = 0.5f,
+                MinFuseTime = 1.9f, MaxFuseTime = 2.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MaxColorR = 0.5f, MaxColorG = 0.5f, MinColorB = 1.0f,
-                MinVx = -5.0f, MaxVx = -5.0f, MinVy = 100.0f, MaxVy = 100.0f
+                MinVx = -6.0f, MaxVx = -4.0f, MinVy = 99.0f, MaxVy = 101.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 2.0f, MaxFuseTime = 2.0f, MinBrightness = 0.5f, MaxBrightness = 0.5f,
+                MinFuseTime = 1.9f, MaxFuseTime = 2.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MaxColorR = 0.5f, MaxColorG = 0.5f, MinColorB = 1.0f,
-                MinVx = -15.0f, MaxVx = -15.0f, MinVy = 100.0f, MaxVy = 100.0f
+                MinVx = -16.0f, MaxVx = -14.0f, MinVy = 99.0f, MaxVy = 101.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 2.0f, MaxFuseTime = 2.0f, MinBrightness = 0.5f, MaxBrightness = 0.5f,
+                MinFuseTime = 1.9f, MaxFuseTime = 2.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MaxColorR = 0.5f, MaxColorG = 0.5f, MinColorB = 1.0f,
-                MinVx = -25.0f, MaxVx = -25.0f, MinVy = 100.0f, MaxVy = 100.0f
+                MinVx = -26.0f, MaxVx = -24.0f, MinVy = 99.0f, MaxVy = 101.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 2.0f, MaxFuseTime = 2.0f, MinBrightness = 0.5f, MaxBrightness = 0.5f,
+                MinFuseTime = 1.9f, MaxFuseTime = 2.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MaxColorR = 0.5f, MaxColorG = 0.5f, MinColorB = 1.0f,
-                MinVx = 5.0f, MaxVx = 5.0f, MinVy = 100.0f, MaxVy = 100.0f
+                MinVx = 4.0f, MaxVx = 6.0f, MinVy = 99.0f, MaxVy = 101.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 2.0f, MaxFuseTime = 2.0f, MinBrightness = 0.5f, MaxBrightness = 0.5f,
+                MinFuseTime = 1.9f, MaxFuseTime = 2.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MaxColorR = 0.5f, MaxColorG = 0.5f, MinColorB = 1.0f,
-                MinVx = 15.0f, MaxVx = 15.0f, MinVy = 100.0f, MaxVy = 100.0f
+                MinVx = 14.0f, MaxVx = 16.0f, MinVy = 99.0f, MaxVy = 101.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 2.0f, MaxFuseTime = 2.0f, MinBrightness = 0.5f, MaxBrightness = 0.5f,
+                MinFuseTime = 1.9f, MaxFuseTime = 2.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MaxColorR = 0.5f, MaxColorG = 0.5f, MinColorB = 1.0f,
-                MinVx = 25.0f, MaxVx = 25.0f, MinVy = 100.0f, MaxVy = 100.0f
+                MinVx = 24.0f, MaxVx = 26.0f, MinVy = 99.0f, MaxVy = 101.0f
             }),
+            ////////////////////
+            // The white stripe
             new Firework(new Firework.Config() {
-                MinFuseTime = 4.0f, MaxFuseTime = 4.0f, MinBrightness = 1.0f, MaxBrightness = 1.0f,
+                MinFuseTime = 3.9f, MaxFuseTime = 4.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MinColorR = 1.0f, MinColorG = 1.0f, MinColorB = 1.0f,
-                MinVx = -20.0f, MaxVx = -20.0f, MinVy = 90.0f, MaxVy = 90.0f
+                MinVx = -21.0f, MaxVx = -19.0f, MinVy = 99.0f, MaxVy = 101.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 4.0f, MaxFuseTime = 4.0f, MinBrightness = 1.0f, MaxBrightness = 1.0f,
+                MinFuseTime = 3.9f, MaxFuseTime = 4.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MinColorR = 1.0f, MinColorG = 1.0f, MinColorB = 1.0f,
-                MinVx = -10.0f, MaxVx = -10.0f, MinVy = 90.0f, MaxVy = 90.0f
+                MinVx = -11.0f, MaxVx = -9.0f, MinVy = 99.0f, MaxVy = 101.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 4.0f, MaxFuseTime = 4.0f, MinBrightness = 1.0f, MaxBrightness = 1.0f,
+                MinFuseTime = 3.9f, MaxFuseTime = 4.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MinColorR = 1.0f, MinColorG = 1.0f, MinColorB = 1.0f,
-                MinVx = 0.0f, MaxVx = 0.0f, MinVy = 90.0f, MaxVy = 90.0f
+                MinVx = -1.0f, MaxVx = 1.0f, MinVy = 99.0f, MaxVy = 101.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 4.0f, MaxFuseTime = 4.0f, MinBrightness = 1.0f, MaxBrightness = 1.0f,
+                MinFuseTime = 3.9f, MaxFuseTime = 4.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MinColorR = 1.0f, MinColorG = 1.0f, MinColorB = 1.0f,
-                MinVx = 10.0f, MaxVx = 10.0f, MinVy = 90.0f, MaxVy = 90.0f
+                MinVx = 9.0f, MaxVx = 11.0f, MinVy = 99.0f, MaxVy = 101.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 4.0f, MaxFuseTime = 4.0f, MinBrightness = 1.0f, MaxBrightness = 1.0f,
+                MinFuseTime = 3.9f, MaxFuseTime = 4.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MinColorR = 1.0f, MinColorG = 1.0f, MinColorB = 1.0f,
-                MinVx = 20.0f, MaxVx = 20.0f, MinVy = 90.0f, MaxVy = 90.0f
+                MinVx = 19.0f, MaxVx = 21.0f, MinVy = 99.0f, MaxVy = 101.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 4.0f, MaxFuseTime = 4.0f, MinBrightness = 1.0f, MaxBrightness = 1.0f,
+                MinFuseTime = 3.9f, MaxFuseTime = 4.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MinColorR = 1.0f, MinColorG = 1.0f, MinColorB = 1.0f,
-                MinVx = -20.0f, MaxVx = -20.0f, MinVy = 80.0f, MaxVy = 80.0f
+                MinVx = -21.0f, MaxVx = -19.0f, MinVy = 89.0f, MaxVy = 91.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 4.0f, MaxFuseTime = 4.0f, MinBrightness = 1.0f, MaxBrightness = 1.0f,
+                MinFuseTime = 3.9f, MaxFuseTime = 4.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MinColorR = 1.0f, MinColorG = 1.0f, MinColorB = 1.0f,
-                MinVx = -10.0f, MaxVx = -10.0f, MinVy = 80.0f, MaxVy = 80.0f
+                MinVx = -11.0f, MaxVx = -9.0f, MinVy = 89.0f, MaxVy = 91.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 4.0f, MaxFuseTime = 4.0f, MinBrightness = 1.0f, MaxBrightness = 1.0f,
+                MinFuseTime = 3.9f, MaxFuseTime = 4.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MinColorR = 1.0f, MinColorG = 1.0f, MinColorB = 1.0f,
-                MinVx = 0.0f, MaxVx = 0.0f, MinVy = 80.0f, MaxVy = 80.0f
+                MinVx = -1.0f, MaxVx = 1.0f, MinVy = 89.0f, MaxVy = 91.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 4.0f, MaxFuseTime = 4.0f, MinBrightness = 1.0f, MaxBrightness = 1.0f,
+                MinFuseTime = 3.9f, MaxFuseTime = 4.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MinColorR = 1.0f, MinColorG = 1.0f, MinColorB = 1.0f,
-                MinVx = 10.0f, MaxVx = 10.0f, MinVy = 80.0f, MaxVy = 80.0f
+                MinVx = 9.0f, MaxVx = 11.0f, MinVy = 89.0f, MaxVy = 91.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 4.0f, MaxFuseTime = 4.0f, MinBrightness = 1.0f, MaxBrightness = 1.0f,
+                MinFuseTime = 3.9f, MaxFuseTime = 4.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MinColorR = 1.0f, MinColorG = 1.0f, MinColorB = 1.0f,
-                MinVx = 20.0f, MaxVx = 20.0f, MinVy = 80.0f, MaxVy = 80.0f
+                MinVx = 19.0f, MaxVx = 21.0f, MinVy = 89.0f, MaxVy = 91.0f
+            }),
+            //////////////////
+            // The red stripe
+            new Firework(new Firework.Config() {
+                MinFuseTime = 3.9f, MaxFuseTime = 4.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
+                MinColorR = 1.0f, MinColorG = 0.3f, MaxColorG = 0.3f, MinColorB = 0.3f, MaxColorB = 0.3f,
+                MinVx = -21.0f, MaxVx = -19.0f, MinVy = 79.0f, MaxVy = 81.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 4.0f, MaxFuseTime = 4.0f, MinBrightness = 1.0f, MaxBrightness = 1.0f,
+                MinFuseTime = 3.9f, MaxFuseTime = 4.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MinColorR = 1.0f, MinColorG = 0.3f, MaxColorG = 0.3f, MinColorB = 0.3f, MaxColorB = 0.3f,
-                MinVx = -20.0f, MaxVx = -20.0f, MinVy = 70.0f, MaxVy = 70.0f
+                MinVx = -11.0f, MaxVx = -9.0f, MinVy = 79.0f, MaxVy = 81.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 4.0f, MaxFuseTime = 4.0f, MinBrightness = 1.0f, MaxBrightness = 1.0f,
+                MinFuseTime = 3.9f, MaxFuseTime = 4.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MinColorR = 1.0f, MinColorG = 0.3f, MaxColorG = 0.3f, MinColorB = 0.3f, MaxColorB = 0.3f,
-                MinVx = -10.0f, MaxVx = -10.0f, MinVy = 70.0f, MaxVy = 70.0f
+                MinVx = -1.0f, MaxVx = 1.0f, MinVy = 79.0f, MaxVy = 81.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 4.0f, MaxFuseTime = 4.0f, MinBrightness = 1.0f, MaxBrightness = 1.0f,
+                MinFuseTime = 3.9f, MaxFuseTime = 4.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MinColorR = 1.0f, MinColorG = 0.3f, MaxColorG = 0.3f, MinColorB = 0.3f, MaxColorB = 0.3f,
-                MinVx = 0.0f, MaxVx = 0.0f, MinVy = 70.0f, MaxVy = 70.0f
+                MinVx = 9.0f, MaxVx = 11.0f, MinVy = 79.0f, MaxVy = 81.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 4.0f, MaxFuseTime = 4.0f, MinBrightness = 1.0f, MaxBrightness = 1.0f,
+                MinFuseTime = 3.9f, MaxFuseTime = 4.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MinColorR = 1.0f, MinColorG = 0.3f, MaxColorG = 0.3f, MinColorB = 0.3f, MaxColorB = 0.3f,
-                MinVx = 10.0f, MaxVx = 10.0f, MinVy = 70.0f, MaxVy = 70.0f
+                MinVx = 19.0f, MaxVx = 21.0f, MinVy = 79.0f, MaxVy = 81.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 4.0f, MaxFuseTime = 4.0f, MinBrightness = 1.0f, MaxBrightness = 1.0f,
+                MinFuseTime = 3.9f, MaxFuseTime = 4.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MinColorR = 1.0f, MinColorG = 0.3f, MaxColorG = 0.3f, MinColorB = 0.3f, MaxColorB = 0.3f,
-                MinVx = 20.0f, MaxVx = 20.0f, MinVy = 70.0f, MaxVy = 70.0f
+                MinVx = -21.0f, MaxVx = -19.0f, MinVy = 69.0f, MaxVy = 71.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 4.0f, MaxFuseTime = 4.0f, MinBrightness = 1.0f, MaxBrightness = 1.0f,
+                MinFuseTime = 3.9f, MaxFuseTime = 4.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MinColorR = 1.0f, MinColorG = 0.3f, MaxColorG = 0.3f, MinColorB = 0.3f, MaxColorB = 0.3f,
-                MinVx = -20.0f, MaxVx = -20.0f, MinVy = 60.0f, MaxVy = 60.0f
+                MinVx = -11.0f, MaxVx = -9.0f, MinVy = 69.0f, MaxVy = 71.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 4.0f, MaxFuseTime = 4.0f, MinBrightness = 1.0f, MaxBrightness = 1.0f,
+                MinFuseTime = 3.9f, MaxFuseTime = 4.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MinColorR = 1.0f, MinColorG = 0.3f, MaxColorG = 0.3f, MinColorB = 0.3f, MaxColorB = 0.3f,
-                MinVx = -10.0f, MaxVx = -10.0f, MinVy = 60.0f, MaxVy = 60.0f
+                MinVx = -1.0f, MaxVx = 1.0f, MinVy = 69.0f, MaxVy = 71.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 4.0f, MaxFuseTime = 4.0f, MinBrightness = 1.0f, MaxBrightness = 1.0f,
+                MinFuseTime = 3.9f, MaxFuseTime = 4.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MinColorR = 1.0f, MinColorG = 0.3f, MaxColorG = 0.3f, MinColorB = 0.3f, MaxColorB = 0.3f,
-                MinVx = 0.0f, MaxVx = 0.0f, MinVy = 60.0f, MaxVy = 60.0f
+                MinVx = 9.0f, MaxVx = 11.0f, MinVy = 69.0f, MaxVy = 71.0f
             }),
             new Firework(new Firework.Config() {
-                MinFuseTime = 4.0f, MaxFuseTime = 4.0f, MinBrightness = 1.0f, MaxBrightness = 1.0f,
+                MinFuseTime = 3.9f, MaxFuseTime = 4.1f, MinBrightness = 0.9f, MaxBrightness = 1.0f,
                 MinColorR = 1.0f, MinColorG = 0.3f, MaxColorG = 0.3f, MinColorB = 0.3f, MaxColorB = 0.3f,
-                MinVx = 10.0f, MaxVx = 10.0f, MinVy = 60.0f, MaxVy = 60.0f
-            }),
-            new Firework(new Firework.Config() {
-                MinFuseTime = 4.0f, MaxFuseTime = 4.0f, MinBrightness = 1.0f, MaxBrightness = 1.0f,
-                MinColorR = 1.0f, MinColorG = 0.3f, MaxColorG = 0.3f, MinColorB = 0.3f, MaxColorB = 0.3f,
-                MinVx = 20.0f, MaxVx = 20.0f, MinVy = 60.0f, MaxVy = 60.0f
+                MinVx = 19.0f, MaxVx = 21.0f, MinVy = 69.0f, MaxVy = 71.0f
             })
         };
 
